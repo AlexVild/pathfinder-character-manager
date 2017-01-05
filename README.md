@@ -1,6 +1,7 @@
 # Pathfinder Character Manager
 
-This app was built using the Electron Quick Start app: [Quick Start Guide](http://electron.atom.io/docs/tutorial/quick-start)
+This app was built using the Electron Quick Start app: [Quick Start Guide](http://electron.atom.io/docs/tutorial/quick-start).
+
 Learn more about Electron and its API in the [documentation](http://electron.atom.io/docs/).
 
 ## To Use
