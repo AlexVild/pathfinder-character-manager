@@ -1,5 +1,6 @@
 'use strict'
 
+// TODO Get eslint working correctly
 angular.module('PFCM',
     ['ngMaterial',
     'ngRoute'])
