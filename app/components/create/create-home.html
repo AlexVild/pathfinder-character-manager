@@ -1,0 +1,12 @@
+<div>
+    <md-content class="md-padding">
+        <md-nav-bar md-selected-nav-item="create.activeStep" nav-bar-aria-label="Character Creation steps">
+            <md-nav-item md-nav-click="goto('step1')" name="step1">1. Race</md-nav-item>
+            <md-nav-item md-nav-click="goto('step2')" name="step2">2. Name</md-nav-item>
+            <md-nav-item md-nav-click="goto('step3')" name="step3">3. Class</md-nav-item>
+        </md-nav-bar>
+    </md-content>
+    <div ng-if="create.activeStep == 'step1'">Hey</div>
+    <div ng-if="create.activeStep == 'step2'">Hi</div>
+    <div ng-if="create.activeStep == 'step3'">How you 'dur</div>
+</div>
