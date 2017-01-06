@@ -7,12 +7,9 @@ var service = function(){
             return character;
         },
 
-        updateCharacter: function(prop, param){
-            switch (prop){
-                case 'race': character.race = param;
-                    break;
-                default: console.log('invalid parameter was sent to update character');
-            }
+        updateCharacter: function(newChar){
+            character = newChar;
+            console.log(character);
         }
     }
 };

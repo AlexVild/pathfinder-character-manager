@@ -1,14 +1,29 @@
-<div>
-    <h1>Name Your Character</h1>
-    <form name="name-entry-form">
+<div class="md-padding">
+    <h1 layout="row" class="md-display-2" layout-align="center center">Name Your Character</h1>
+    <form name="nameEntryForm" layout="column" layout-align="center center">
         <md-input-container>
           <label>Name</label>
           <input type="text" ng-model="nameEntry.name" required md-maxlength="30" autofocus>
         </md-input-container>
-
-        <md-radio-group ng-model="nameEntry.sex">
+        <md-radio-group name="sex" ng-model="nameEntry.sex" layout="row" required>
           <md-radio-button value="male">Male</md-radio-button>
           <md-radio-button value="female">Female</md-radio-button>
         </md-radio-group>
+        <md-select name="height" ng-model="nameEntry.height" placeholder="Height" required>
+            <md-option ng-repeat="heightOption in nameEntry.heights">
+                {{heightOption}}
+            </md-option>
+        </md-select>
+        <md-input-container>
+          <label>Weight ({{nameEntry.minWeight}} - {{nameEntry.maxWeight}})</label>
+          <input name="weight" type="number" ng-model="nameEntry.weight" ng-min="{{ nameEntry.minWeight }}" ng-max="{{ nameEntry.maxWeight }}" required>
+          <div ng-messages="nameEntryForm.weight.$error">
+              <div ng-message="max min">{{nameEntry.minWeight}} - {{nameEntry.maxWeight}} pounds for this race!</div>
+          </div>
+        </md-input-container>
+        <div layout="row" layout-align="start end">
+            <md-button class="md-raised md-primary" type="submit" ng-click="nameEntry.submit()" ng-disabled="nameEntryForm.$invalid">Continue</md-button>
+        </div>
+        <!-- TODO eye color, hair color, where from, etc -->
     </form>
 </div>

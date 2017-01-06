@@ -3,7 +3,8 @@
 // TODO Get eslint working correctly
 angular.module('PFCM',
     ['ngMaterial',
-    'ngRoute'])
+    'ngRoute',
+    'ngMessages'])
 .controller('mainController', function($scope){
     $scope.test = "test";
 })

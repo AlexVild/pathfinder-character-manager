@@ -1,21 +1,23 @@
-<div layout="column" layout-align="center center">
-    <img src="{{ raceSelect.races[raceSelect.currentIndex].img }}" align="middle">
-    <div layout="row" layout-align="space-between end">
-        <div>
-            <md-button align="left" ng-disabled="raceSelect.currentIndex == 0" ng-click="raceSelect.currentIndex = raceSelect.currentIndex - 1"><i class="material-icons">chevron_left</i></md-button>
+<div layout="column">
+    <div layout="column" layout-align="center center">
+        <img height="600" width="400" src="{{ raceSelect.races[raceSelect.currentIndex].img }}" align="middle">
+    </div>
+    <div layout="row" layout-align="space-between center">
+        <div flex="10" layout="row" layout-align="start center">
+            <md-button class="md-raised" ng-disabled="raceSelect.currentIndex == 0" ng-click="raceSelect.currentIndex = raceSelect.currentIndex - 1"><i class="material-icons">chevron_left</i></md-button>
         </div>
-        <div layout-fill>
-            <h1 class="md-display-2">{{ raceSelect.races[raceSelect.currentIndex].name }} ({{raceSelect.currentIndex + 1}} / 7)</h1>
+        <div flex="80" layout-align="center center">
+            <h1 class="md-display-2">{{ raceSelect.races[raceSelect.currentIndex].name }} ({{ raceSelect.currentIndex + 1 }} / 7)</h1>
         </div>
-        <div layout="row">
-            <md-button ng-disabled="raceSelect.currentIndex == 6" ng-click="raceSelect.currentIndex = raceSelect.currentIndex + 1"><i class="material-icons">chevron_right</i></md-button>
+        <div flex="10" layout="row" layout-align="end center">
+            <md-button class="md-raised" ng-disabled="raceSelect.currentIndex == 6" ng-click="raceSelect.currentIndex = raceSelect.currentIndex + 1"><i class="material-icons">chevron_right</i></md-button>
         </div>
     </div>
 
     <div>
-        <p>{{ raceSelect.races[raceSelect.currentIndex].description }}</p>
+        <p class="md-subhead">{{ raceSelect.races[raceSelect.currentIndex].description }}</p>
     </div>
-    <div>
+    <div layout="row" layout-align="start end">
         <md-button class="md-raised md-primary" ng-click="raceSelect.submit()">Continue</md-button>
     </div>
 </div>
