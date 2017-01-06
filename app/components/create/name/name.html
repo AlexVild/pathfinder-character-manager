@@ -1,0 +1,14 @@
+<div>
+    <h1>Name Your Character</h1>
+    <form name="name-entry-form">
+        <md-input-container>
+          <label>Name</label>
+          <input type="text" ng-model="nameEntry.name" required md-maxlength="30" autofocus>
+        </md-input-container>
+
+        <md-radio-group ng-model="nameEntry.sex">
+          <md-radio-button value="male">Male</md-radio-button>
+          <md-radio-button value="female">Female</md-radio-button>
+        </md-radio-group>
+    </form>
+</div>

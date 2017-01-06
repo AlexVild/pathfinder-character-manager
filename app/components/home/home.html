@@ -1,5 +1,5 @@
-<div>
-    <div class="md-title" flex>
+<div layout="column" layout-align="center center" class="md-padding">
+    <div class="md-title" align="center">
         <h1>Welcome to the Pathfinder Character Manager!</h1>
     </div>
     <div class="md-subhead">
@@ -10,8 +10,8 @@
     </div>
     <div layout="row">
         <div>
-            <md-button ng-click="home.redirect('new')">New Character</md-button>
-            <md-button ng-click="home.redirect('load')">Load Character</md-button>
+            <md-button class="md-raised md-primary" ng-click="home.redirect('new')">New Character</md-button>
+            <md-button class="md-raised md-primary" ng-click="home.redirect('load')">Load Character</md-button>
         </div>
     </div>
 </div>

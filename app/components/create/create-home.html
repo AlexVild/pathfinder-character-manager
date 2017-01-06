@@ -1,12 +1,24 @@
 <div>
-    <md-content class="md-padding">
-        <md-nav-bar md-selected-nav-item="create.activeStep" nav-bar-aria-label="Character Creation steps">
-            <md-nav-item md-nav-click="goto('step1')" name="step1">1. Race</md-nav-item>
-            <md-nav-item md-nav-click="goto('step2')" name="step2">2. Name</md-nav-item>
-            <md-nav-item md-nav-click="goto('step3')" name="step3">3. Class</md-nav-item>
-        </md-nav-bar>
-    </md-content>
-    <div ng-if="create.activeStep == 'step1'">Hey</div>
-    <div ng-if="create.activeStep == 'step2'">Hi</div>
-    <div ng-if="create.activeStep == 'step3'">How you 'dur</div>
+    <md-card>
+        <md-card-content>
+            <md-tabs md-selected="activeIndex" md-dynamic-height>
+                <md-tab id="step1">
+                    <md-tab-label>Race</md-tab-label>
+                    <md-tab-body>
+                        <race-select></race-select>
+                    </md-tab-body>
+                </md-tab>
+                <md-tab label="Name & Gender">
+                    <md-tab-body>
+                        <name-entry></name-entry>
+                    </md-tab-body>
+                </md-tab>
+                <md-tab label="Class">
+                    <md-tab-body>
+                        <race-select></race-select>
+                    </md-tab-body>
+                </md-tab>
+            </md-tabs>
+        </md-card-content>
+    </md-card>
 </div>

@@ -6,6 +6,7 @@
 
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
     <link rel="stylesheet" type="text/css" href="../bower_components/angular-material/angular-material.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- <link rel="stylesheet" type="text/css" href="styles/app.css"> -->
 
     <!-- Bower scripts -->
@@ -21,14 +22,19 @@
     <script type="text/javascript" src="components/toolbar/directive.js"></script>
     <script type="text/javascript" src="components/toolbar/toolbar.js"></script>
     <script type="text/javascript" src="components/create/create-home.js"></script>
+    <script type="text/javascript" src="components/create/race-select/race-select.js"></script>
+    <script type="text/javascript" src="components/create/race-select/directive.js"></script>
+    <script type="text/javascript" src="components/services/characterService.js"></script>
+    <script type="text/javascript" src="components/create/name/directive.js"></script>
+    <script type="text/javascript" src="components/create/name/name.js"></script>
 
   </head>
   <body ng-controller="mainController">
-      <toolbar></toolbar>
-      <div layout="column" layout-align="center center">
-          <div layout="row" ng-cloak>
-              <div ng-view></div>
-          </div>
-      </div>
+        <toolbar></toolbar>
+        <div layout-align="center center" layout="row">
+            <div flex-gt-md="15"></div>
+            <div ng-view flex-gt-md="75"></div>
+            <div flex-gt-md="15"></div>
+        </div>
   </body>
 </html>
