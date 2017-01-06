@@ -5,22 +5,67 @@ var ctrl = function($scope, $rootScope, CharacterService){
     var char = CharacterService.getCharacter();
 
     self.sex = 'male'; // Default value for sex
-    self.submit = function(){
-        char.name = self.name;
-        char.sex = self.sex;
-        char.height = self.height;
-        char.weight = self.weight;
-        CharacterService.updateCharacter(char);
-
-        // Will move on to the next step
-        $rootScope.$broadcast('creation-change-steps', {step: 2});
-    }
-
     self.heights = [];
     var maxHeight = 0;
     var minHeight = 0;
     self.maxWeight = 0;
     self.minWeight = 0;
+
+    self.names = [];
+
+    self.getNames = function(){
+        switch(char.race){
+            case 'Human':
+                if(self.sex == 'male'){
+                    self.names = ['Ragnar' , 'Eilif', 'Garidan', 'Aragon']
+                } else{
+                    self.names = ['Alerdene' , 'Belka', 'Jayazi', 'Lestari']
+                }
+                break;
+            case 'Half-orc':
+                if(self.sex == 'male'){
+                    self.names = ['Ausk' , 'Havak', 'Davor', 'Tsadok']
+                } else{
+                    self.names = ['Canan' , 'Drogheda', 'Mazon', 'Zeljka']
+                }
+                break;
+            case 'Half-elf':
+                if(self.sex == 'male'){
+                    self.names = ['Calathes' , 'Iradli', 'Kyras', 'Quinray']
+                } else{
+                    self.names = ['Tamarie' , 'Kieyanna', 'Elsbeth', 'Cathran']
+                }
+                break;
+            case 'Halfling':
+                if(self.sex == 'male'){
+                    self.names = ['Antal', 'Hyrgan', 'Vraxim', 'Miro']
+                } else{
+                    self.names = ['Anafa', 'Irlana', 'Marra', 'Yamyra']
+                }
+                break;
+            case 'Elf':
+                if(self.sex == 'male'){
+                    self.names = ['Caladrel', 'Legolas', 'Seldlon', 'Variel']
+                } else{
+                    self.names = ['Dardlara', 'Jathal', 'Oparal', 'Tessara']
+                }
+                break;
+            case 'Dwarf':
+                if(self.sex == 'male'){
+                    self.names = ['Dolgrin', 'Harsk', 'Kazmuk', 'Rogar', 'Gimli']
+                } else{
+                    self.names = ['Agna', 'Bodill', 'Yangrit', 'Rusilka']
+                }
+                break;
+            case 'Gnome':
+                if(self.sex == 'male'){
+                    self.names = ['Abroshtor', 'Halungalom', 'Krolmnite', 'Zarzuket']
+                } else{
+                    self.names = ['Besh', 'Fijit', 'Lini', 'Trig']
+                }
+                break;
+        }
+    }
 
     // Call this whenever sex is changed
     self.getHeightAndWeight = function(){
@@ -133,15 +178,31 @@ var ctrl = function($scope, $rootScope, CharacterService){
         }
     }
 
+    self.submit = function(){
+        char.name = self.name;
+        char.sex = self.sex;
+        char.height = self.height;
+        char.weight = self.weight;
+        char.eyeColor = self.eyeColor;
+        char.hairColor = self.hairColor;
+        CharacterService.updateCharacter(char);
+
+        // Will move on to the next step
+        $rootScope.$broadcast('creation-change-steps', {step: 2});
+    }
+
     // Update height/weights
     $scope.$on('creation-change-steps', function(event, args){
         if(args.step == 1){
             self.getHeightAndWeight();
+            self.getNames();
         }
     });
     $scope.$watch('nameEntry.sex', function(){
         self.getHeightAndWeight();
+        self.getNames();
     })
+
 }
 
 angular.module('PFCM').controller('NameEntryCtrl', ctrl);
