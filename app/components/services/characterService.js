@@ -2,6 +2,7 @@
 
 var service = function(){
     var character = new Object();
+    var self = this;
     return{
         getCharacter: function(){
             return character;
@@ -10,7 +11,19 @@ var service = function(){
         updateCharacter: function(newChar){
             character = newChar;
             console.log(character);
-        }
+        },
+
+        // Used to generate a dice roll, 2d12 + 5 = diceRoll(2, 12, 5)
+        diceRoll: function(amt, type, mod){
+            var total = 0;
+            if(mod){
+                total = total + mod;
+            }
+            for (var i = 0; i < amt; i ++){
+                total = total + (Math.floor((Math.random() * type) + 1));
+            }
+            return total;
+        },
     }
 };
 

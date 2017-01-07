@@ -1,3 +1,13 @@
 .example-names{
     margin-bottom: 55px;
 }
+
+.alignment-padding{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.rolls-padding{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
