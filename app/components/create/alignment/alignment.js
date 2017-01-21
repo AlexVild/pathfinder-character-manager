@@ -1,6 +1,6 @@
 'use strict'
 
-var ctrl = function($scope, $rootScope, CharacterService){
+var ctrl = function($scope, $rootScope, CharacterService, DeityService){
     var self = this;
     var char = CharacterService.getCharacter();
 
@@ -25,7 +25,8 @@ var ctrl = function($scope, $rootScope, CharacterService){
             case 'Paladin': self.alignments = ['Lawful Good'];
                 self.classWarn = true;
                 break;
-            default: self.alignments = ['Lawful Good', 'Neutral Good', 'Chaotic Good', 'Lawful Neutral', 'Neutral', 'Chaotic Neutral', 'Lawful Evil', 'Neutral Evil', 'Chaotic Evil'];
+            default: self.classWarn = false;
+                self.alignments = ['Lawful Good', 'Neutral Good', 'Chaotic Good', 'Lawful Neutral', 'Neutral', 'Chaotic Neutral', 'Lawful Evil', 'Neutral Evil', 'Chaotic Evil'];
         }
     }
 

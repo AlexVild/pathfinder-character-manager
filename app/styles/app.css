@@ -11,3 +11,12 @@
     padding-top: 10px;
     padding-bottom: 10px;
 }
+
+.stat-used{
+    text-decoration: line-through;
+    color: grey;
+}
+
+.warning{
+    color:red;
+}

@@ -6,8 +6,8 @@
         <div flex="30" layout="row" layout-align="start center">
             <md-button class="md-raised" ng-disabled="classSel.currentIndex == 0" ng-click="classSel.currentIndex = classSel.currentIndex - 1"><i class="material-icons">chevron_left</i></md-button>
         </div>
-        <div flex="40" layout-align="center center">
-            <h1 class="md-display-2">{{ classSel.classes[classSel.currentIndex].name }} ({{ classSel.currentIndex + 1 }} / 11)</h1>
+        <div flex="40">
+            <h1 class="md-display-2" align="center">{{ classSel.classes[classSel.currentIndex].name }}</h1>
         </div>
         <div flex="30" layout="row" layout-align="end center">
             <md-button class="md-raised" ng-disabled="classSel.currentIndex == 10" ng-click="classSel.currentIndex = classSel.currentIndex + 1"><i class="material-icons">chevron_right</i></md-button>
@@ -17,7 +17,8 @@
     <div>
         <p class="md-subhead">{{ classSel.classes[classSel.currentIndex].description }}</p>
     </div>
-    <div layout="row" layout-align="start end">
+    <div layout="row">
+        <span flex></span>
         <md-button class="md-raised md-primary" ng-click="classSel.submit()">Continue</md-button>
     </div>
 </div>

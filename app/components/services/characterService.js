@@ -24,6 +24,11 @@ var service = function(){
             }
             return total;
         },
+
+        // Used to calculate ability modifier
+        calcAbilityMod(stat){
+            return(Math.floor((stat - 10)/2));
+        }
     }
 };
 

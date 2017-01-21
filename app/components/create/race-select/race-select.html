@@ -2,12 +2,12 @@
     <div layout="column" layout-align="center center">
         <img height="600" width="400" src="{{ raceSelect.races[raceSelect.currentIndex].img }}" align="middle">
     </div>
-    <div layout="row" layout-align="space-between center">
+    <div layout="row">
         <div flex="30" layout="row" layout-align="start center">
             <md-button class="md-raised" ng-disabled="raceSelect.currentIndex == 0" ng-click="raceSelect.currentIndex = raceSelect.currentIndex - 1"><i class="material-icons">chevron_left</i></md-button>
         </div>
-        <div flex="40" layout-align="center center">
-            <h1 class="md-display-2">{{ raceSelect.races[raceSelect.currentIndex].name }} ({{ raceSelect.currentIndex + 1 }} / 7)</h1>
+        <div flex="40">
+            <h1 class="md-display-2" align="center">{{ raceSelect.races[raceSelect.currentIndex].name }}</h1>
         </div>
         <div flex="30" layout="row" layout-align="end center">
             <md-button class="md-raised" ng-disabled="raceSelect.currentIndex == 6" ng-click="raceSelect.currentIndex = raceSelect.currentIndex + 1"><i class="material-icons">chevron_right</i></md-button>
@@ -18,6 +18,7 @@
         <p class="md-subhead">{{ raceSelect.races[raceSelect.currentIndex].description }}</p>
     </div>
     <div layout="row" layout-align="start end">
+        <span flex></span>
         <md-button class="md-raised md-primary" ng-click="raceSelect.submit()">Continue</md-button>
     </div>
 </div>
