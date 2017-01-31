@@ -1,6 +1,6 @@
 'use strict'
 
-var ctrl = function($scope, $rootScope, CharacterService){
+var ctrl = function($scope, $rootScope, $mdDialog, CharacterService){
     var self = this;
     var char = CharacterService.getCharacter();
 
@@ -67,9 +67,25 @@ var ctrl = function($scope, $rootScope, CharacterService){
 
     self.submit = function(){
         char.class = self.classes[self.currentIndex].name;
-        CharacterService.updateCharacter(char);
-        // Will move on to the next step
-        $rootScope.$broadcast('creation-change-steps', {step: 3});
+        if (char.class == 'Cleric'){
+            $mdDialog.show({
+                controller: 'DeitySelectCtrl',
+                templateUrl: 'components/create/class-select/deity-select-dialog.html',
+                parent: angular.element(document.body),
+                clickOutsideToClose:true,
+                fullscreen: true
+            })
+            .then(function(deityInfo) {
+                console.log(deityInfo);
+                char.deity = deityInfo.deity;
+                char.domains = deityInfo.domains;
+                CharacterService.updateCharacter(char);
+                $rootScope.$broadcast('creation-change-steps', {step: 3});
+            }, function(){});
+        } else{
+            CharacterService.updateCharacter(char);
+            $rootScope.$broadcast('creation-change-steps', {step: 3});
+        }
     }
 }
 

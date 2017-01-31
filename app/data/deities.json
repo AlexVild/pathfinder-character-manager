@@ -2,7 +2,7 @@
     {
         "name": "Erastil",
         "descr": "God of farming, hunting, trade, family",
-        "alignment": "Lawful Evil",
+        "alignment": "Lawful Good",
         "domains": [1, 5, 13, 16, 22],
         "weapon": "Longbow",
         "id": 0
@@ -10,7 +10,7 @@
     {
         "name": "Iomeade",
         "descr": "Goddess of valor, rulership, justice, honor",
-        "alignment": "Lawful Evil",
+        "alignment": "Lawful Good",
         "domains": [12, 13, 16, 27, 30],
         "weapon": "Longsword",
         "id": 1
@@ -18,7 +18,7 @@
     {
         "name": "Torag",
         "descr": "God of the forge, protection, strategy",
-        "alignment": "Lawful Evil",
+        "alignment": "Lawful Good",
         "domains": [2, 9, 13, 16, 23],
         "weapon": "Warhammer",
         "id": 2

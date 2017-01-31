@@ -5,12 +5,19 @@ var service = function(){
     var self = this;
 
     var deities = JSON.parse(fs.readFileSync('app/data/deities.json', 'utf8'));
-    
-    console.log(deities[0]);
+    var domains = JSON.parse(fs.readFileSync('app/data/domains.json', 'utf8'));
 
     return{
         getDeities: function(){
             return deities;
+        },
+
+        getDomains: function(options){
+            var tmp = [];
+            for(var i = 0; i < options.length; i++){
+                tmp[i] = domains[options[i]];
+            }
+            return tmp;
         }
     }
 };
