@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 var ctrl = function($scope){
     var self = this;
@@ -8,6 +8,6 @@ var ctrl = function($scope){
     $scope.$on('creation-change-steps', function(event, args){
         $scope.activeIndex = args.step;
     });
-}
+};
 
 angular.module('PFCM').controller('CreationCtrl', ctrl);

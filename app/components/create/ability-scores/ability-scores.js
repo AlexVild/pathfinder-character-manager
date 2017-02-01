@@ -103,7 +103,7 @@ var ctrl = function($scope, $rootScope, CharacterService, $timeout, $mdDialog){
             templateUrl: 'components/create/ability-scores/dialogs/str.html',
             parent: angular.element(document.body),
             targetEvent: ev,
-            clickOutsideToClose:true,
+            clickOutsideToClose: true,
             fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
         });
     };
@@ -113,7 +113,7 @@ var ctrl = function($scope, $rootScope, CharacterService, $timeout, $mdDialog){
             templateUrl: 'components/create/ability-scores/dialogs/dex.html',
             parent: angular.element(document.body),
             targetEvent: ev,
-            clickOutsideToClose:true,
+            clickOutsideToClose: true,
             fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
         });
     };
@@ -123,7 +123,7 @@ var ctrl = function($scope, $rootScope, CharacterService, $timeout, $mdDialog){
             templateUrl: 'components/create/ability-scores/dialogs/const.html',
             parent: angular.element(document.body),
             targetEvent: ev,
-            clickOutsideToClose:true,
+            clickOutsideToClose: true,
             fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
         });
     };
@@ -134,7 +134,7 @@ var ctrl = function($scope, $rootScope, CharacterService, $timeout, $mdDialog){
             templateUrl: 'components/create/ability-scores/dialogs/int.html',
             parent: angular.element(document.body),
             targetEvent: ev,
-            clickOutsideToClose:true,
+            clickOutsideToClose: true,
             fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
         });
     };
@@ -144,7 +144,7 @@ var ctrl = function($scope, $rootScope, CharacterService, $timeout, $mdDialog){
             templateUrl: 'components/create/ability-scores/dialogs/wis.html',
             parent: angular.element(document.body),
             targetEvent: ev,
-            clickOutsideToClose:true,
+            clickOutsideToClose: true,
             fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
         });
     };
@@ -159,13 +159,11 @@ var ctrl = function($scope, $rootScope, CharacterService, $timeout, $mdDialog){
         });
     };
 
-
-
     function DialogController($scope, $mdDialog){
         $scope.cancel = function(){
             $mdDialog.cancel();
-        }
+        };
     }
-}
+};
 
 angular.module('PFCM').controller('AbilityScoreGenCtrl', ctrl);

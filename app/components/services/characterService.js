@@ -1,8 +1,7 @@
-'use strict'
+'use strict';
 
 var service = function(){
     var character = new Object();
-    var self = this;
     return{
         getCharacter: function(){
             return character;
@@ -29,7 +28,7 @@ var service = function(){
         calcAbilityMod(stat){
             return(Math.floor((stat - 10)/2));
         }
-    }
+    };
 };
 
 angular.module('PFCM').factory('CharacterService', service);

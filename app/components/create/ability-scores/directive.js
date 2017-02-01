@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 angular.module('PFCM').directive('abilityScores', function(){
     return {
@@ -6,5 +6,5 @@ angular.module('PFCM').directive('abilityScores', function(){
         templateUrl: 'components/create/ability-scores/ability-scores.html',
         controller: 'AbilityScoreGenCtrl',
         controllerAs: 'absc'
-    }
+    };
 });

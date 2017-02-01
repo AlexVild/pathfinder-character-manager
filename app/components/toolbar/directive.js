@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 angular.module('PFCM').directive('toolbar', function(){
     return {
@@ -6,5 +6,5 @@ angular.module('PFCM').directive('toolbar', function(){
         templateUrl: 'components/toolbar/toolbar.html',
         controller: 'ToolbarCtrl',
         controllerAs: 'toolbar'
-    }
+    };
 });

@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 var ctrl = function($scope, $rootScope, CharacterService){
     var self = this;
@@ -48,8 +48,8 @@ var ctrl = function($scope, $rootScope, CharacterService){
         char.race = self.races[self.currentIndex].name;
         CharacterService.updateCharacter(char);
         $rootScope.$broadcast('creation-change-steps', {step: 1});
-    }
+    };
 
-}
+};
 
 angular.module('PFCM').controller('RaceSelectCtrl', ctrl);

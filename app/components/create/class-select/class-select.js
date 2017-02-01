@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 var ctrl = function($scope, $rootScope, $mdDialog, CharacterService){
     var self = this;
@@ -64,15 +64,14 @@ var ctrl = function($scope, $rootScope, $mdDialog, CharacterService){
         }
     ];
 
-
     self.submit = function(){
         char.class = self.classes[self.currentIndex].name;
-        if (char.class == 'Cleric'){
+        if (char.class === 'Cleric'){
             $mdDialog.show({
                 controller: 'DeitySelectCtrl',
                 templateUrl: 'components/create/class-select/deity-select-dialog.html',
                 parent: angular.element(document.body),
-                clickOutsideToClose:true,
+                clickOutsideToClose: true,
                 fullscreen: true
             })
             .then(function(deityInfo) {
@@ -86,7 +85,7 @@ var ctrl = function($scope, $rootScope, $mdDialog, CharacterService){
             CharacterService.updateCharacter(char);
             $rootScope.$broadcast('creation-change-steps', {step: 3});
         }
-    }
-}
+    };
+};
 
 angular.module('PFCM').controller('ClassSelectCtrl', ctrl);

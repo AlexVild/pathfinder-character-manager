@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 angular.module('PFCM').directive('alignmentSelect', function(){
     return {
@@ -6,5 +6,5 @@ angular.module('PFCM').directive('alignmentSelect', function(){
         templateUrl: 'components/create/alignment/alignment.html',
         controller: 'AlignmentCtrl',
         controllerAs: 'alignmentCtrl'
-    }
+    };
 });

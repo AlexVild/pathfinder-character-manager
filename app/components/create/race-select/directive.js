@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 angular.module('PFCM').directive('raceSelect', function(){
     return {
@@ -6,5 +6,5 @@ angular.module('PFCM').directive('raceSelect', function(){
         templateUrl: 'components/create/race-select/race-select.html',
         controller: 'RaceSelectCtrl',
         controllerAs: 'raceSelect'
-    }
+    };
 });

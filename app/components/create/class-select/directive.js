@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 angular.module('PFCM').directive('classSelect', function(){
     return {
@@ -6,5 +6,5 @@ angular.module('PFCM').directive('classSelect', function(){
         templateUrl: 'components/create/class-select/class-select.html',
         controller: 'ClassSelectCtrl',
         controllerAs: 'classSel'
-    }
+    };
 });

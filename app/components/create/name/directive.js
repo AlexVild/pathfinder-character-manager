@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 angular.module('PFCM').directive('nameEntry', function(){
     return {
@@ -6,5 +6,5 @@ angular.module('PFCM').directive('nameEntry', function(){
         templateUrl: 'components/create/name/name.html',
         controller: 'NameEntryCtrl',
         controllerAs: 'nameEntry'
-    }
+    };
 });
