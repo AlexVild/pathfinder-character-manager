@@ -31,7 +31,6 @@ var ctrl = function($scope, $rootScope, CharacterService, DeityService){
     }
 
     // TODO Cleric's stuff here and on class page
-
     self.submit = function(){
         char.alignment = self.alignment;
         CharacterService.updateCharacter(char);
